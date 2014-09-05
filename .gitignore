@@ -1,0 +1,6 @@
+.sass-cache/
+bower_components/
+front-contafacil.sublime-project
+front-contafacil.sublime-workspace
+node_modules/
+dist/

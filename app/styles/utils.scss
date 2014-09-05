@@ -1,0 +1,15 @@
+@mixin btn-3d($color:grey, $width: 4px) {
+	border-bottom-color: $color;
+	border-bottom-style: solid;
+	border-bottom-width: $width;
+	&:hover {
+		border-bottom-color: transparent;
+	}
+	&:active {
+		border-bottom-color: transparent;
+	}
+	&:focus {
+		border-bottom-color: transparent;
+	}
+}
+

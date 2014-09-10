@@ -21,16 +21,18 @@
   ],
   "dependencies": {
     "bootstrap": "~3.2.0",
-    "jquery": "~2.1.1",
+    "jquery": ">=2.1.1",
     "underscore": "~1.6.0",
     "backbone": ">=1.1.2",
     "fontawesome": "~4.1.0",
     "backbone.localStorage": "~1.1.13",
     "backbone-relational": "~0.8.8",
     "requirejs": "~2.1.14",
-    "bootstrap-sass-official": "~3.2.0+2"
+    "bootstrap-sass-official": "~3.2.0+2",
+    "marionette": "~2.1.0"
   },
   "resolutions": {
-    "backbone": ">=1.1.2"
+    "backbone": ">=1.1.2",
+    "jquery": ">=2.1.1"
   }
 }

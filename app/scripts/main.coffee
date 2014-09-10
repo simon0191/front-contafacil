@@ -5,23 +5,25 @@ require.config
     jquery: "../bower_components/jquery/dist/jquery"
     bootstrap: "../bower_components/bootstrap/dist/js/bootstrap"
     backbone: "../bower_components/backbone/backbone"
+    "backbone.wreqr": "../bower_components/backbone.wreqr/lib/backbone.wreqr"
     underscore: "../bower_components/underscore/underscore"
+    marionette: "../bower_components/marionette/lib/backbone.marionette"
 
   shim:
     backbone:
-      deps: ["underscore", "jquery"]
-      exports: "Backbone"
-
-    underscore:
-      exports: "_"
+      deps: ["underscore", "jquery", "underscore"]
 
     bootstrap:
       deps: ["jquery","underscore"]
 
+    marionette:
+      deps: ["backbone"]
 
-require(["App","jquery","underscore","backbone","bootstrap"], (App, $,_, Backbone, bootstrap)->
-  "use strict"
-  $(document).ready ()->
-    console.log("Yaju :D");
-    window.app = new App({$view:$("#app")});
-)
+
+require [
+  "app"
+  "jquery"
+  ],
+  (app, $)->
+    $(document).ready ()->
+      app.start()

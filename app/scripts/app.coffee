@@ -2,6 +2,7 @@ define [
   "backbone"
   "marionette"
   "msgBus"
+  "config"
   "apps/load"
   ],
   (Backbone, Marionette, msgBus)->

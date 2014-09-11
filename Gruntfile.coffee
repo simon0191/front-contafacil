@@ -29,13 +29,18 @@ module.exports = (grunt) ->
           livereload: true
 
       html:
-        files: "<%= config.app %>/*.html"
+        files: ["<%= config.app %>/*.html"]
         tasks: ["copy:html"]
         options:
           livereload: true
       images:
         files: "<%= config.app %>/images/**/*.{jpg,png,gif}"
         tasks: ["copy:images"]
+        options:
+          livereload: true
+      design:
+        files: ["<%= config.app %>/design/**/*.*"]
+        tasks: ["copy:design"]
         options:
           livereload: true
 
@@ -93,7 +98,7 @@ module.exports = (grunt) ->
       html:
         expand: true
         cwd: "<%= config.app %>"
-        src: "*.html"
+        src: ["*.html"]
         dest: "<%= config.dist %>/"
       fonts:
         files:[{
@@ -112,6 +117,11 @@ module.exports = (grunt) ->
         cwd: "<%= config.app %>/images"
         src: "*.*"
         dest: "<%= config.dist %>/images"
+      design:
+        expand: true
+        cwd: "<%= config.app %>"
+        src: ["design/**/*.*"]
+        dest: "<%= config.dist %>/"
 
     clean:
       build: ["<%= config.dist %>/*"]
@@ -151,6 +161,7 @@ module.exports = (grunt) ->
     "copy:html"
     "copy:fonts"
     "copy:images"
+    "copy:design"
     "buildScripts"
     "buildTemplates"
     "buildStyles"
